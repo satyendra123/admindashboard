@@ -1,0 +1,167 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Grid Layout</title>
+</head>
+
+<body>
+  <div class="container1">
+    <aside class="sidebar">
+      <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item"><a class="sidebar-nav-link"><i class="fas fa-home"></i>Home</a></li>
+            <li class="sidebar-nav-item"><a class="sidebar-nav-link"><i class="fas fa-info-circle"></i>Booking</a></li>
+            <li class="sidebar-nav-item"><a class="sidebar-nav-link"><i class="fas fa-envelope"></i>Contact</a></li>
+            <li class="sidebar-nav-item"><a class="sidebar-nav-link"><i class="fas fa-sign-in-alt"></i>Setting</a></li>
+          </ul>
+    </aside>
+    <header class="header">
+      <div>
+        <button class="btn btn-primary" id="closeBtn"><i class="fa-solid fa-bars"></i></button>
+        <img src="" alt="company logo">
+          <span>Houston system</span>
+          </div>
+          <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+          </ul>
+    </header>
+    <main class="main">
+      <section class="dashboard">
+      <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</section>
+    </main>
+  </div>
+  <script src="./js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+b) style.css
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  max-width: 130rem;
+  transition: grid-template-columns 0.3s ease, margin-left 0.3s ease; /* Add transition for grid-template-columns and margin-left */
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  grid-row: 1 / -1;
+  padding: 5.1rem 0;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for transform and opacity */
+}
+
+.header {
+  background-color: #f0f0f0;
+  color: white;
+  padding: 1rem;
+}
+
+.main {
+  background-color: #fafafa;
+  padding: 1rem;
+}
+
+.dashboard {
+  display: flex;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+}
+
+.sidebar-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav-item {
+  margin-bottom: 0.5rem; /* Adds space between items */
+}
+
+.sidebar-nav-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Center align the items */
+  color: #757575;
+  font-size: 1rem;
+  color:#555;
+  font-weight: 100;
+  padding:0.75rem 0rem;
+  cursor: pointer;
+  transition:all 0.3s;
+}
+
+.sidebar-nav-link i {
+  margin-right: 15px; /* Add margin to create space between icon and text */
+}
+
+.sidebar-nav-link:hover {
+  background-color: #fafafa;
+  color:#424242;
+  border-radius: 4px;
+}
+
+.card {
+  margin-right: 5px;
+}
+
+/* Classes for hiding the sidebar */
+.container1.close-sidebar .sidebar {
+  transform: translateX(-100%); /* Move the sidebar off-screen */
+  opacity: 0; /* Hide the sidebar */
+}
+
+.container1.close-sidebar {
+  grid-template-columns: 0 1fr; /* Make the main content take up the full width */
+}
+
+#EX-1 c)
+  script.js
+  document.getElementById('closeBtn').addEventListener('click', function() {
+    document.querySelector('.container1').classList.toggle('close-sidebar');
+  });
+  
