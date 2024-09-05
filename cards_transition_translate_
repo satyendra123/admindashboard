@@ -1,0 +1,55 @@
+css concept-1 transform/translate/transition
+project-1 isme humne ek card banaya hai aur us card ko hum jab hover krate hai to humara card x direction me move hone lagta hai. transition ko hum humesa parents ke sath lgate hai. aur hum transition aur translate unhi components me kaam karte hai jisme humne position fixed or static nahi lgaye hai
+index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <img src="https://picsum.photos/seed/image1/500/300" alt="Random Image 1" class="slide"/>
+      <h1 class="card-heading">David Dell</h1>
+      <p class="card-text">the lorem text the secton that contains header with having open functionality lorem dolar sit amen consecuter</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+style.css
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+
+.card{
+  height:300px;
+  width:300px;
+  border: 2px solid green;
+  transition:transform ease 3s;
+}
+
+.card:hover {
+  transform: translateX(120px);
+}
+
+.card img{
+  width:300px;
+  height:200px;
+}
+
+.card-heading{
+  text-align:center;
+  margin-top:-5px;
+}
+
+.card-text{
+  text-align:center;
+  margin-top:-12px;
+  font-weight:200px;
+}
+
+
